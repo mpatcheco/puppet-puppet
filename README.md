@@ -45,6 +45,8 @@ Default: `true`.
 
 * `runinterval` - How often puppet agent runs in seconds. Default: `1800`.
 
+* `noop` - Puppet Dry run. Default: `false`.
+
 #### Examples
     ---
     classes:
