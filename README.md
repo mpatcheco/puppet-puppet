@@ -50,30 +50,9 @@ Default: empty
 *  `package_resources` - A hash of options used to manage additional packages.
 Default: empty
 
-<<<<<<< HEAD
-* `runinterval` - How often puppet agent runs in seconds. Default: `1800`.
-
-* `noop` - Puppet Dry run. Default: `false`.
-
-#### Examples
-    ---
-    classes:
-      - puppet::agent
-    
-    puppet::agent::enable: 'false'
-    puppet::agent::ensure: 'stopped'
-    puppet::agent::master: 'puppet.example.com'
-    puppet::agent::environment: 'staging'
-
-
-### puppet::master
-This class installs puppet master and puppetdb-terminus packages and
-configures puppet master server. It is tested with Puppet 3.1 or later.
-=======
 ### puppet::package
 This class installs puppet from default repositories.
 If you wish to add the puppetlabs repository do it in the module that manages apt/yum/etc.
->>>>>>> upstream/master
 
 #### Parameters
 * `ensure` - What state the package should be in.
@@ -191,5 +170,6 @@ Default: from `$puppet::params::master_service_name`
         source: 'puppet:///files/puppet/hiera.yaml'
 
 ## Authors
-* Atom Powers <atom.powers@seattlebiomed.org>
-
+* Matheus Pacheco <matheusapm@yahoo.com.br> 
+* Forked from Atom Powers <atom.powers@seattlebiomed.org>
+* Forked from Vaidas Jablonskis <jablonskis@gmail.com>
