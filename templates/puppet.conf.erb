@@ -1,16 +1,13 @@
 #
-# This file is managed by puppet.
-#
-# Configuration file for puppet agent.
+# This file is managed by puppet class <%= @name %>
+# Puppet service configuration
 #
 [main]
-    vardir  = <%= scope.lookupvar('puppet::vardir') %>
-    confdir = <%= scope.lookupvar('puppet::confdir') %>
-    logdir  = <%= scope.lookupvar('puppet::logdir') %>
-    rundir  = <%= scope.lookupvar('puppet::rundir') %>
-    ssldir  = <%= scope.lookupvar('puppet::ssldir') %>
+<% @main_options_hash.sort.each do |option,value| %><%= option %>='<%= value%>'
+<% end %>
 
 [agent]
+<<<<<<< HEAD
     classfile = $vardir/classes.txt
     localconfig = $vardir/localconfig
     environment = <%= @environment %>
@@ -19,3 +16,13 @@
     runinterval = <%= @runinterval %>
     pluginsync = <%= @pluginsync %>
     noop = <%= @noop %>
+=======
+<% @agent_options_hash.sort.each do |option,value| %><%= option %>='<%= value%>'
+<% end %>
+
+[master]
+<% @master_options_hash.sort.each do |option,value| %><%= option %>='<%= value%>'
+<% end %>
+
+# END
+>>>>>>> upstream/master
